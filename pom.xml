@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>ar.com.jmfsg</groupId>
 			<artifactId>api-doc</artifactId>
-			<version>0.0.20-SNAPSHOT</version>
+			<version>0.0.20</version>
 		</dependency>
 
 		<!-- In this example, we use jetty as a servlet container. You can use 
