@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>ar.com.jmfsg</groupId>
+	<version>1.0-SNAPSHOT</version>
+	<artifactId>api-doc-sample</artifactId>
+	<packaging>war</packaging>
+	
+	<name>jmfsg :: api-doc sample</name>
+	<description>api documentation sample application</description>
+	<url>http://jmfsg.com.ar</url>
+
+	<scm>
+		<connection>scm:git:git@github.com:juanformoso/api-doc-sample.git</connection>
+		<developerConnection>scm:git:git@github.com:juanformoso/api-doc-sample.git</developerConnection>
+		<url>scm:git:git@github.com:juanformoso/api-doc-sample.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>Juan Manuel Formoso</name>
+			<email>jformoso@gmail.com</email>
+			<url>http://seniorgeek.com.ar</url>
+			<roles>
+				<role>author</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<dependencies>
+		<!-- You must import the api-doc artifact -->
+		<dependency>
+			<groupId>ar.com.jmfsg</groupId>
+			<artifactId>api-doc</artifactId>
+			<version>0.0.20-SNAPSHOT</version>
+		</dependency>
+
+		<!-- In this example, we use jetty as a servlet container. You can use 
+			tomcat if you want -->
+		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>jetty</artifactId>
+			<version>6.1H.22</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.0.7.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+	</dependencies>
+</project>

@@ -1,0 +1,102 @@
+{
+"general":{
+	"projectName":"My project API",
+	"projectSummary":"<p>This is your project summary. You can explain general stuff about it.<br />See an example here: <a href='http://api.despegar.com'>http://api.despegar.com</a></p><p>You can also have links to <a href='##BASE_URL##/docs/page/custom'>custom pages</a>!</p>",
+	"methodSummary":"<p>This is a summary description of your methods. it accepts full html text, so be careful what you do, as it will be rendered as is.<br />You could use this section to specify general information about your methods such as, for example, that they accept vectorized parameters.</p><p>The next method list is taken from api, and it's here just as an example of what you can have (the console in the detail view <i>won't work</i> because these methods don't actually exist in this project).</p>",
+	"twitterUsername":"juanformoso",
+	"relativePath":""
+},
+"methods":[{
+	"getSimple":{
+		"response": [
+			{ "name" : "dummy-key", "description":"Just some dummy data" }
+		]
+	},
+	"getPaginableAndSortable":{
+		"group":"Miscellaneous",
+		"subGroup":"Subgroup 1",
+		"description":"Shows a paginable and sortable method",
+		"friendlyName":"paginable",
+		"order":1,
+		"requestMapping":"/paginable",
+		"request": {
+			"paginable":true,
+			"sortable": {
+				"possibleValues": ["id", "description"]
+			}
+		},
+		"responseIsList":true,
+		"response": [
+			{ "name" : "id" },
+			{ "name" :"description", "description":"The awesome description" }
+		]
+	},
+	"getWithId":{
+		"group":"Miscellaneous",
+		"subGroup":"Subgroup 1",
+		"description":"Method that takes one or more ids",
+		"longDescription":"If you fill in the long description, the short one shown in the index is overridden",
+		"friendlyName":"with ids",
+		"order":2,
+		"requestMapping":"/with-id/{ids}",
+		"request": {
+			"parameters": [
+				{ "name" :"ids", "description": "A single primary key identifier or a vectorized, comma-delimited list of identifiers", "vectorized": true }
+			]
+		},
+		"responseIsList":true,
+		"response": [
+			{ "name" : "your-key", "description":"Your key in the response data" }
+		]
+	},
+	"getDynamicResponse":{
+		"group":"Miscellaneous",
+		"subGroup":"Subgroup 2",
+		"description":"Shows dynamic responses",
+		"longDescription":"Shows how to specify responses that vary according to some variable.<br />The example shows a fictitious response with made up objects called <i>city</i> and <i>airport</i>",
+		"friendlyName":"dynamic response",
+		"order":0,
+		"requestMapping":"/dynamic/{type}",
+		"request": {
+			"parameters": [
+				{ "name" :"type", "description": "Object to get, either city or airport"}
+			]
+		},
+		"dynamicResponse": [{
+			"name":"For type 'city'",
+			"response": [
+				{ "name" :"id", "description":"The object id"},
+				{ "name" :"type", "description":"Whether the object is an <i>airport</i> or a <i>city</i>"},
+				{ "name" :"name", "description":"The object name"},
+				{ "name" :"countryId", "description":"2 digit country id where this city belongs"},
+				{ "name" :"geoLocation", "description":"Geolocation of this object",
+					children: [
+						{ "name" :"latitude", "description":"The latitude"},
+						{ "name" :"longitude", "description":"The longitude"}
+					]
+				},
+				{ "name" :"hasAirport", "description":"Indicates if this city has airports in it"}
+			]
+		},{
+			"name":"For type 'airport'",
+			"response": [
+				{ "name" :"id", "description":"The object id"},
+				{ "name" :"type", "description":"Whether the object is an <i>airport</i> or a <i>city</i>"},
+				{ "name" :"name", "description":"The object name"},
+				{ "name" :"cityId", "description":"3 digit city id where this airport belongs"},
+				{ "name" :"countryId", "description":"2 digit country id where this airport belongs"},
+				{ "name" :"geoLocation", "description":"Geolocation of this object",
+					children: [
+						{ "name" :"latitude", "description":"The latitude"},
+						{ "name" :"longitude", "description":"The longitude"}
+					]
+				}	
+			]
+		}]
+	}
+	}],
+	"dictionary" :[ 
+	   {"key":"id","description":"The Object Id"},
+	   {"key":"type","description":"Whether the object is an <i>airport</i> or a <i>city</i>"}
+	]
+}
