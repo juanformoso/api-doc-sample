@@ -2,7 +2,7 @@
 "general":{
 	"projectName":"My project API",
 	"projectSummary":"<p>This is your project summary. You can explain general stuff about it.<br />See an example here: <a href='http://api.despegar.com'>http://api.despegar.com</a></p><p>You can also have links to <a href='##BASE_URL##/docs/page/custom'>custom pages</a>!</p>",
-	"methodSummary":"<p>This is a summary description of your methods. it accepts full html text, so be careful what you do, as it will be rendered as is.<br />You could use this section to specify general information about your methods such as, for example, that they accept vectorized parameters.</p><p>The next method list is taken from api, and it's here just as an example of what you can have (the console in the detail view <i>won't work</i> because these methods don't actually exist in this project).</p>",
+	"methodSummary":"<p>This is a summary description of your methods. it accepts full html text, so be careful what you do, as it will be rendered as is.<br />You could use this section to specify general information about your methods such as, for example, that they accept vectorized parameters.</p>",
 	"twitterUsername":"juanformoso",
 	"relativePath":""
 },
