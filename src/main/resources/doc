@@ -70,7 +70,7 @@
 				{ "name" :"name", "description":"The object name"},
 				{ "name" :"countryId", "description":"2 digit country id where this city belongs"},
 				{ "name" :"geoLocation", "description":"Geolocation of this object",
-					children: [
+					"children" : [
 						{ "name" :"latitude", "description":"The latitude"},
 						{ "name" :"longitude", "description":"The longitude"}
 					]
@@ -86,17 +86,106 @@
 				{ "name" :"cityId", "description":"3 digit city id where this airport belongs"},
 				{ "name" :"countryId", "description":"2 digit country id where this airport belongs"},
 				{ "name" :"geoLocation", "description":"Geolocation of this object",
-					children: [
+					"children" : [
 						{ "name" :"latitude", "description":"The latitude"},
 						{ "name" :"longitude", "description":"The longitude"}
 					]
 				}	
 			]
 		}]
+	},
+	"longDescriptionNotImplemented" : {
+		"group" : "Extended",
+		"friendlyName" : "longDescNotImpl",
+		"order" : 0,
+		"description" : "The method simple description.",
+		"longDescription" : "The method long description.",
+		"implemented" : false,
+		"requestMapping" : "/longDescriptionNotImplemented",
+		"request" : {
+			"parameters" : [] 
+		},
+		"response" : []
+	},
+	"filterOptions" : {
+		"group" : "Extended",
+		"friendlyName" : "filterOptions",
+		"order" : 0,
+		"description" : "Method with filters, facets and options.",
+		"requestMapping" : "/filterOptions",
+		"request" : {
+			"parameters" : [ { "name" : "param1", "description" : "First param." } ],
+			"filters" : [ { "name" : "filter1", "description" : "First filter." } ],
+			"options" : [ 
+						  { "name" : "option1", "description" : "First option." },
+						  { "name" : "option2", "description" : "Second option.", "type" : "Integer", "longDescription" : "Option long description", "defaultValue" : "0" } 
+						]
+		},
+		"response" : []
+	},
+	"facetsWithDescription" : {
+		"group" : "Extended",
+		"friendlyName" : "facetsWithDescription",
+		"order" : 0,
+		"description" : "Method with facets and facets description.",
+		"requestMapping" : "/facetsWithDesc",
+		"facets" : true,
+		"request" : {
+			"facets" : [ { "name" : "facet1" },
+						 { "name" : "facet2", "description" : "Facet 2 description", "type" : "Integer" } ]
+		}
+	},
+	"paginableAndSortable" : {
+		"group" : "Extended",
+		"friendlyName" : "paginableAndSortable",
+		"order" : 0,
+		"description" : "Method that has paginable and sortable attributes",
+		"requestMapping" : "/paginableAndSortable",
+		"request" : {
+			"parameters" : [ { "name" : "param1", "description" : "Description 1" } ],
+			"paginable" : true,
+			"sortable" : { "possibleValues" : [ "SORT_1" , "SORT_2", "SORT_3" ] }
+		}
+	},
+	"dictionaryDescription" : {
+		"group" : "Extended",
+		"friendlyName" : "dictionaryDescription",
+		"order" : 0,
+		"description" : "Method that uses the dictionary standard descriptions.",
+		"requestMapping" : "/dictionaryDescription",
+		"request" : {
+			"parameters" : [ { "name" : "param1", "descriptionKey" : "desc1" } ],
+			"filters" : [ { "name" : "desc2" } ],
+			"options" : [ { "name" : "desc3" , "descriptionKey" : "desc3", "description" : "Description that is shown instead of 'desc3'." } ]
+		}
+	},
+	"parametersExpanded" : {
+		"group" : "Extended",
+		"friendlyName" : "parametersExt",
+		"order" : 0,
+		"description" : "Method with full use of parameters options.",
+		"requestMapping" : "/parametersExt",
+		"request" : {
+			"parameters" : [
+				{ "name" : "listParam", "description" : "Parameter that is a list", "isList" : true },
+				{ "name" : "optionalParam", "description" : "Parameter that is optional", "optional" : true, "type" : "boolean" },
+				{ "name" : "grandChildren", "description" : "Parameter with grandchildren",
+					"children" : [
+						{ "name" : "child", "description" : "First child", "isList" : true, "optional" : true },
+						{ "name" : "dad" , "description" : "Dad field",
+							"children" : [ { "name" : "grandson" } ]
+						}
+					]
+				}
+			]
+		}
 	}
 	}],
 	"dictionary" :[ 
 	   {"key":"id","description":"The Object Id"},
-	   {"key":"type","description":"Whether the object is an <i>airport</i> or a <i>city</i>"}
+	   {"key":"type","description":"Whether the object is an <i>airport</i> or a <i>city</i>"},
+	   {"key":"desc1", "description" : "Description obtained by descriptionKey."},
+	   {"key":"desc2", "description" : "Description obtained by name."},
+	   {"key":"desc3", "description" : "Description not shown, because 'description' field is shown."}
 	]
 }
