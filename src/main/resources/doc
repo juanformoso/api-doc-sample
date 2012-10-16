@@ -141,6 +141,7 @@
 		"order" : 0,
 		"description" : "Method that has paginable and sortable attributes",
 		"requestMapping" : "/paginableAndSortable",
+		"shortName" : "/pages",
 		"request" : {
 			"parameters" : [ { "name" : "param1", "description" : "Description 1" } ],
 			"paginable" : true,
@@ -179,7 +180,16 @@
 				}
 			]
 		}
-	}
+	},
+	"multipleMappings" : {
+		"group" : "Extended",
+		"friendlyName" : "multipleMappings",
+		"order" : 1,
+		"description" : "Method with more than one mapping",
+		"method" : { "get" : "/multipleMappings/get", "post" : "/multipleMappings/post" },
+		"preferredMethod" : "get",
+		"request" : {}
+	},
 	}],
 	"dictionary" :[ 
 	   {"key":"id","description":"The Object Id"},
