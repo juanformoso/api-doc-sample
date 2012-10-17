@@ -4,7 +4,8 @@
 	"projectSummary":"<p>This is your project summary. You can explain general stuff about it.<br />See an example here: <a href='http://api.despegar.com'>http://api.despegar.com</a></p><p>You can also have links to <a href='##BASE_URL##/docs/page/custom'>custom pages</a>!</p>",
 	"methodSummary":"<p>This is a summary description of your methods. it accepts full html text, so be careful what you do, as it will be rendered as is.<br />You could use this section to specify general information about your methods such as, for example, that they accept vectorized parameters.</p>",
 	"twitterUsername":"juanformoso",
-	"relativePath":""
+	"relativePath":"",
+	"resourcesPath" : "/"
 },
 "methods":[{
 	"getSimple":{
@@ -185,10 +186,27 @@
 		"group" : "Extended",
 		"friendlyName" : "multipleMappings",
 		"order" : 1,
-		"description" : "Method with more than one mapping",
+		"description" : "Method with more than one mapping, examples and dynamic dates.",
 		"method" : { "get" : "/multipleMappings/get", "post" : "/multipleMappings/post" },
 		"preferredMethod" : "get",
-		"request" : {}
+		"request" : {
+			"parameters" : [
+				{ "name" : "param1" , "description" : "First parameter." },
+				{ "name" : "date" , "description" : "Date.", "type" : "Date" }
+			]
+		},
+		"examples" : [
+			{ "getParams" : { "param1" : "1990-1-1" , "date" : "1990-1-1" }, 
+				"postFile" : "multiple_a.json" },
+			{ "getParams" : { "param1" : "1990-1-1 %d%now" , "date" : "1990-1-1 %$d%now" },
+				"postFile" : "multiple_b.json" },
+			{ "getParams" : { "param1" : "1990-1-1 %d+2d" , "date" : "1990-1-1 %$d+2d" } ,
+				"postFile" : "multiple_c.json" },
+			{ "getParams" : { "param1" : "1990-1-1 %d-1d" , "date" : "1990-1-1 %$d-1d" },
+				"postFile" : "multiple_d.json"  },
+			{ "getParams" : { "param1" : "1990-1-1 %d+1m-1d+10y" , "date" : "1990-1-1 %$d+1m-1d+10y" },
+				"postFile" : "multiple_e.json"  }
+		]
 	},
 	}],
 	"dictionary" :[ 
