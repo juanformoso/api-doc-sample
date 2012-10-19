@@ -16,6 +16,8 @@
 
 	<!-- Import the documentation context -->
 	<import resource="classpath:ar/com/jmfsg/documentation/application-context.xml" />
+	<mvc:resources mapping="/**" location="classpath:postFiles/**"
+		order="0" />
 
 	<bean class="ar.com.jmfsg.documentation.DocumentationDescriptor"
 		p:modulePrefix="misc" p:resource="classpath:doc">
