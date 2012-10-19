@@ -208,6 +208,24 @@
 				"postFile" : "multiple_e.json"  }
 		]
 	},
+	"betaMethod" : {
+		"group" : "Tagged",
+		"friendlyName" : "betaMethod",
+		"order" : 1,
+		"description" : "A method in beta version",
+		"tags" : [ "Beta", "Private" ],
+		"method" : { "get" : "/betaMethod" },
+		"request" : { }
+	},
+	"depricatedMethod" : {
+		"group" : "Tagged",
+		"friendlyName" : "depricatedMethod",
+		"order" : 1,
+		"description" : "A method that is marked as depricated",
+		"tags" : [ "Depricated" ],
+		"method" : { "get" : "/depricatedMethod" },
+		"request" : { }
+	},
 	}],
 	"dictionary" :[ 
 	   {"key":"id","description":"The Object Id"},
@@ -215,5 +233,22 @@
 	   {"key":"desc1", "description" : "Description obtained by descriptionKey."},
 	   {"key":"desc2", "description" : "Description obtained by name."},
 	   {"key":"desc3", "description" : "Description not shown, because 'description' field is shown."}
+	],
+	"tags" : [
+         {
+       	 "name" : "Beta",
+       	 "color" : "#66FF66",
+       	 "title"  : "This service is in beta and, as such, the returned fields could change"
+         }, 
+         {
+       	 "name" : "Deprecated",
+       	 "color" : "#FF3333",
+       	 "title"  : "This service is deprecated and, as such, maintenance is no longer assured. Check documentation to see which new service to use"
+         },
+         {
+       	 "name" : "Private",
+       	 "color" : "#3366FF",
+       	 "title" : "This service is only accesible to some ApiKeys and cannot be used with the online console."
+         }
 	]
 }
