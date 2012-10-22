@@ -1,4 +1,4 @@
 {
-    "param1" : "1990-1-1 %d%now",
-    "date" : "1990-1-1 %$d%now"
+    "param1" : "1990-1-1 %d%now %f yyyy-MM-dd f%",
+    "date" : "1990-1-1 %$d%now %f yyyy-MM-dd f%"
 }

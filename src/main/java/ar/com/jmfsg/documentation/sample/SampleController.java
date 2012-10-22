@@ -1,5 +1,6 @@
 package ar.com.jmfsg.documentation.sample;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javassist.expr.NewArray;
@@ -41,10 +42,16 @@ public class SampleController {
     }
     
     @RequestMapping( value = "/multipleMappings/get", method = RequestMethod.GET)
-    public ModelAndView getMultipleMappings(@RequestParam(value = "param1") String param1, @RequestParam(value = "date") String date) {
+    public ModelAndView getMultipleMappings(@RequestParam(value = "param1") String param1, @RequestParam(value = "date") String date) throws Exception {
     	ModelAndView ret = createView();
     	ret.addObject("param1", param1);
-    	ret.addObject("date", new Date(Long.parseLong(date)).toString());
+    	Date d = null;
+    	try {
+    		d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+    	} catch (Exception e) {
+    		throw e;
+    	}
+    	ret.addObject("date", d.toString());
     	return ret;
     }
     

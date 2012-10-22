@@ -198,13 +198,13 @@
 		"examples" : [
 			{ "getParams" : { "param1" : "1990-1-1" , "date" : "1990-1-1" }, 
 				"postFile" : "multiple_a.json" },
-			{ "getParams" : { "param1" : "1990-1-1 %d%now" , "date" : "1990-1-1 %$d%now" },
+			{ "getParams" : { "param1" : "1990-1-1 %d%now" , "date" : "1990-1-1 %$d%now %f yyyy-MM-dd f%" },
 				"postFile" : "multiple_b.json" },
-			{ "getParams" : { "param1" : "1990-1-1 %d+2d" , "date" : "1990-1-1 %$d+2d" } ,
+			{ "getParams" : { "param1" : "1990-1-1 %d+2d" , "date" : "1990-1-1 %$d+2d %f yyyy-MM-dd f%" } ,
 				"postFile" : "multiple_c.json" },
-			{ "getParams" : { "param1" : "1990-1-1 %d-1d" , "date" : "1990-1-1 %$d-1d" },
+			{ "getParams" : { "param1" : "1990-1-1 %d-1d" , "date" : "1990-1-1 %$d-1d %f yyyy-MM-dd f%" },
 				"postFile" : "multiple_d.json"  },
-			{ "getParams" : { "param1" : "1990-1-1 %d+1m-1d+10y" , "date" : "1990-1-1 %$d+1m-1d+10y" },
+			{ "getParams" : { "param1" : "1990-1-1 %d+1m-1d+10y" , "date" : "1990-1-1 %$d+1m-1d+10y %f yyyy-MM-dd f%" },
 				"postFile" : "multiple_e.json"  }
 		]
 	},
