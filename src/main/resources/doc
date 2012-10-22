@@ -215,7 +215,8 @@
 		"description" : "A method in beta version",
 		"tags" : [ "Beta", "Private" ],
 		"method" : { "get" : "/betaMethod" },
-		"request" : { }
+		"request" : { "parameters" : [ { "name" : "param" } ] },
+		"examples" : [ { "getParams" : { "param" : "x" } }]
 	},
 	"depricatedMethod" : {
 		"group" : "Tagged",
