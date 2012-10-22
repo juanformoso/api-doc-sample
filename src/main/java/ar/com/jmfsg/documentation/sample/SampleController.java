@@ -55,4 +55,11 @@ public class SampleController {
     	ret.addObject("date", new Date((Long)request.get("date")).toString());
     	return ret;
     }
+    
+    @RequestMapping( value = "/postPutMethod", method = { RequestMethod.POST, RequestMethod.PUT })
+    public ModelAndView postPutMethod(@RequestBody final JSONObject request) {
+    	ModelAndView ret = createView();
+    	ret.addObject("param", request.get("param").toString());
+    	return ret;
+    }
 }
