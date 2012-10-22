@@ -226,6 +226,38 @@
 		"method" : { "get" : "/depricatedMethod" },
 		"request" : { }
 	},
+	"deleteMethod" : {
+		"group" : "Extended",
+		"friendlyName" : "deleteMethod",
+		"description" : "A delete method.",
+		"order" : 1,
+		"method" : { "delete" : "/deleteMethod" },
+		"request" : {
+			"parameters" : [
+				{ "name" : "param1" , "description" : "Parametro 1." }	
+			]
+		},
+	},
+	"postMethod" : {
+		"group" : "Extended",
+		"friendlyName" : "postMethod",
+		"description" : "A post only method.",
+		"order" : 1,
+		"method" : { "post" : "/postMethod" },
+		"request" : { }
+	},
+	"postPutMethod" : {
+		"group" : "Extended",
+		"friendlyName" : "postPutMethod",
+		"description" : "A post and put method.",
+		"order" : 1,
+		"method" : { "post" : "/postPutMethod", "put" : "/postPutMethod" },
+		"request" : {
+			"parameters" : [
+				{ "name" : "param", "description" : "The parameter" } 
+			] 
+		}
+	}
 	}],
 	"dictionary" :[ 
 	   {"key":"id","description":"The Object Id"},
