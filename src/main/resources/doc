@@ -249,14 +249,18 @@
 	"postPutMethod" : {
 		"group" : "Extended",
 		"friendlyName" : "postPutMethod",
-		"description" : "A post and put method.",
+		"description" : "A post and put method with examples.",
 		"order" : 1,
 		"method" : { "post" : "/postPutMethod", "put" : "/postPutMethod" },
 		"request" : {
 			"parameters" : [
 				{ "name" : "param", "description" : "The parameter" } 
 			] 
-		}
+		},
+		"examples" : [
+			{ "postFile" : "postPut_post_a.json", "putFile" : "postPut_put_a.json" },
+			{ "postFile" : "postPut_post_b.json", "putFile" : "postPut_put_b.json" }
+		]
 	}
 	}],
 	"dictionary" :[ 
