@@ -64,9 +64,17 @@ public class SampleController {
     }
     
     @RequestMapping( value = "/postPutMethod", method = { RequestMethod.POST, RequestMethod.PUT })
-    public ModelAndView postPutMethod(@RequestBody final JSONObject request) {
+    public ModelAndView postPutMethod(@RequestBody final JSONObject request, 
+    		@RequestParam(value = "val", required = false) Integer val,
+    		@RequestParam(value = "str", required = false) String str) {
     	ModelAndView ret = createView();
     	ret.addObject("param", request.get("param").toString());
+    	if (val != null) {
+    		ret.addObject("val", val);
+    	}
+    	if (str != null) {
+    		ret.addObject("str", str);
+    	}
     	return ret;
     }
 }

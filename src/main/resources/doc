@@ -171,7 +171,7 @@
 			"parameters" : [
 				{ "name" : "listParam", "description" : "Parameter that is a list", "isList" : true },
 				{ "name" : "optionalParam", "description" : "Parameter that is optional", "optional" : true, "type" : "boolean" },
-				{ "name" : "grandChildren", "description" : "Parameter with grandchildren",
+				{ "name" : "grandChildren", "description" : "Parameter with grandchildren", "isPhony" : true,
 					"children" : [
 						{ "name" : "child", "description" : "First child", "isList" : true, "optional" : true },
 						{ "name" : "dad" , "description" : "Dad field",
