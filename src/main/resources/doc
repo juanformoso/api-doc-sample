@@ -198,13 +198,13 @@
 		"examples" : [
 			{ "title" : "Same date", "getParams" : { "param1" : "1990-1-1" , "date" : "1990-1-1" }, 
 				"postFile" : "multiple_a.json" },
-			{ "title" : "Today", "getParams" : { "param1" : "1990-1-1 %d%now" , "date" : "1990-1-1 %$d%now %f yyyy-MM-dd f%" },
+			{ "title" : "Today", "getParams" : { "param1" : "1990-1-1 %now" , "date" : "%d now %f yyyy-MM-dd f%d%" },
 				"postFile" : "multiple_b.json" },
-			{ "title" : "Plus two days", "getParams" : { "param1" : "1990-1-1 %d+2d" , "date" : "1990-1-1 %$d+2d %f yyyy-MM-dd f%" } ,
+			{ "title" : "Plus two days", "getParams" : { "param1" : "1990-1-1 +2d" , "date" : "%d 1990-1-1 +2d %f yyyy-MM-dd f%d%" } ,
 				"postFile" : "multiple_c.json" },
-			{ "title" : "Minus one day", "getParams" : { "param1" : "1990-1-1 %d-1d" , "date" : "1990-1-1 %$d-1d %f yyyy-MM-dd f%" },
+			{ "title" : "Minus one day", "getParams" : { "param1" : "1990-1-1 -1d" , "date" : "%d1990-1-1 -1d %f yyyy-MM-dd f%d%" },
 				"postFile" : "multiple_d.json"  },
-			{ "getParams" : { "param1" : "1990-1-1 %d+1m-1d+10y" , "date" : "1990-1-1 %$d+1m-1d+10y %f yyyy-MM-dd f%" },
+			{ "getParams" : { "param1" : "1990-1-1 +1m-1d+10y" , "date" : "%d1990-1-1 +1m-1d+10y %f yyyy-MM-dd f%d%" },
 				"postFile" : "multiple_e.json"  }
 		]
 	},
