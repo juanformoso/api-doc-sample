@@ -7,11 +7,6 @@
 	"relativePath":""
 },
 "methods":[{
-	"getSimple":{
-		"response": [
-			{ "name" : "dummy-key", "description":"Just some dummy data" }
-		]
-	},
 	"getPaginableAndSortable":{
 		"group":"Miscellaneous",
 		"subGroup":"Subgroup 1",
@@ -25,6 +20,7 @@
 				"possibleValues": ["id", "description"]
 			}
 		},
+		"method" : "get",
 		"responseIsList":true,
 		"response": [
 			{ "name" : "id" },
@@ -38,6 +34,7 @@
 		"longDescription":"If you fill in the long description, the short one shown in the index is overridden",
 		"friendlyName":"with ids",
 		"order":2,
+		"method" : "get",
 		"requestMapping":"/with-id/{ids}",
 		"request": {
 			"parameters": [
@@ -56,7 +53,7 @@
 		"longDescription":"Shows how to specify responses that vary according to some variable.<br />The example shows a fictitious response with made up objects called <i>city</i> and <i>airport</i>",
 		"friendlyName":"dynamic response",
 		"order":0,
-		"requestMapping":"/dynamic/{type}",
+		"method" : { "get" : "/dynamic/{type}", "post" : "/dynamic/{type}" },
 		"request": {
 			"parameters": [
 				{ "name" :"type", "description": "Object to get, either city or airport"}
@@ -70,7 +67,7 @@
 				{ "name" :"name", "description":"The object name"},
 				{ "name" :"countryId", "description":"2 digit country id where this city belongs"},
 				{ "name" :"geoLocation", "description":"Geolocation of this object",
-					children: [
+					"children" : [
 						{ "name" :"latitude", "description":"The latitude"},
 						{ "name" :"longitude", "description":"The longitude"}
 					]
@@ -86,7 +83,7 @@
 				{ "name" :"cityId", "description":"3 digit city id where this airport belongs"},
 				{ "name" :"countryId", "description":"2 digit country id where this airport belongs"},
 				{ "name" :"geoLocation", "description":"Geolocation of this object",
-					children: [
+					"children": [
 						{ "name" :"latitude", "description":"The latitude"},
 						{ "name" :"longitude", "description":"The longitude"}
 					]
